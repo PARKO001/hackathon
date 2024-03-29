@@ -67,24 +67,5 @@ print("\nExpected Dates:")
 for value, date in expected_dates.items():
     print(f"{value.capitalize()}: Expected Date: {date}")
 
-# =============================================================
-def get_expenditure_by_category_in_all_months(data):
-    categories = ['salary', 'interest', 'grocery', 'entertainment', 'utilities', 'others']
-    expenditures_by_month_and_category = {}
-    for month in range(1, 13):  # Iterate over all months
-        expenditures_by_category = {}
-        for category in categories:
-            expenditure, _ = calculate_expenditure_and_transactions(data, category, month)
-            expenditures_by_category[category] = expenditure
-        expenditures_by_month_and_category[month] = expenditures_by_category
-    return expenditures_by_month_and_category
-
-# Example usage of the function
-expenditures_by_month = get_expenditure_by_category_in_all_months(bank_data)
-for month, expenditures_by_category in expenditures_by_month.items():
-    print(f"Month {month}:")
-    for category, expenditure in expenditures_by_category.items():
-        print(f"{category.capitalize()}: ${expenditure:.2f}")
-    print()  # Add a blank line for readability
 
 
